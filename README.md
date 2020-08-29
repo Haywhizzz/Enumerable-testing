@@ -60,7 +60,7 @@ _Run the tests with the command:_
 - Twitter: [@Haywhizzz](https://twitter.com/Haywhizzz)
 - Linkedin: [Haywhizzz](https://www.linkedin.com/in/oyeleke-ayomide-b962421a6/)
 
-👤 **Amita Roy**
+👤 **Gürbüz Ertunga**
 
 - Github: [@gurbuzertunga](https://github.com/gurbuzertunga)
 - Linkedin: [gurbuzertunga](https://www.linkedin.com/in/gurbuz-ertunga-a607a2a5/)
