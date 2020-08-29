@@ -20,7 +20,7 @@ In this project, We have implemented our own version of Ruby’s enumerable meth
 
 - Ruby
 - VS Code
-- Mac OS
+- Linux
 - Windows
 - Rubocop linter was used to check for style errors
 
@@ -30,7 +30,7 @@ To get your own copy of our project simply clone the repository to your local ma
 
 **Step 1**: Type the following command into a git shell
 
-_git clone <https://github.com/Amita-Roy/Enumerable_Methods.git>_
+_git clone <https://github.com/Haywhizzz/Enumerable-testing.git>_
 
 **Step 2**: Direct a terminal into the cloned repository directory
 
@@ -42,11 +42,15 @@ _cd Enumerable_Methods_
 
 **Step 1**:
 
-_Visit this site <https://repl.it/@amita_r/EnumerableMethods#main.rb>_
+_After cloning the repository, open the terminal and Install RSpec on your local system by running:_
+
+`gem install rspec`
 
 **Step 2**:
 
-_Click run_
+_Run the tests with the command:_
+
+`rspec`
 
 ## Authors
 
@@ -58,9 +62,8 @@ _Click run_
 
 👤 **Amita Roy**
 
-- Github: [@Amita-Roy](https://github.com/Amita-Roy)
-- Twitter: [@AmitaRoy14](https://twitter.com/AmitaRoy14)
-- Linkedin: [Amita Roy](https://www.linkedin.com/in/amita-roy-3b823b68/)
+- Github: [@gurbuzertunga](https://github.com/gurbuzertunga)
+- Linkedin: [gurbuzertunga](https://www.linkedin.com/in/gurbuz-ertunga-a607a2a5/)
 
 🤝 Contributing
 
