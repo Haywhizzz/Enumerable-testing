@@ -83,5 +83,65 @@ describe Enumerable do
     end
   end
 
-  
+  describe '#my_all?' do
+    it 'returns true if none of the array items are false when no block or argument given' do
+      expect(array.my_all?).to eq(true)
+    end
+
+    it 'returns false if any of the array items are false when no block or argument given' do
+      expect(array_a.my_all?).to eq(false)
+    end
+
+    it 'returns true if none of the array items are nil when no block or argument given' do
+      expect(array.my_all?).to eq(true)
+    end
+
+    it 'returns false if any of the array items are nil when no block or argument given' do
+      expect(array_b.my_all?).to eq(false)
+    end
+
+    it 'returns true if all of the array items are member of class given' do
+      expect(array.my_all?(Numeric)).to eq(true)
+    end
+
+    it 'returns false if any of the array items are not member of class given' do
+      expect(array_a.my_all?(Numeric)).to eq(false)
+    end
+
+    it 'returns true if all of the array items matches the Regex given' do
+      expect(words_b.my_all?(/d/)).to eq(true)
+    end
+
+    it "returns false if any of the array items doesn\'t match the Regex given" do
+      expect(words_a.my_all?(expression)).to eq(false)
+    end
+
+    it 'returns true if all of the array items matches the value given' do
+      expect(array_c.my_all?(3)).to eq(true)
+    end
+
+    it "returns false if any of the array items doesn\'t match the value given" do
+      expect(array.my_all?(3)).to eq(false)
+    end
+
+    it 'returns true if none of the range items are false when no block or argument given' do
+      expect(range.my_all?).to eq(true)
+    end
+
+    it 'returns true if all of the range items are member of class given' do
+      expect(range.my_all?(Numeric)).to eq(true)
+    end
+
+    it 'returns false if any of the range items are not member of class given' do
+      expect(range_a.my_all?(Numeric)).to eq(false)
+    end
+
+    it 'returns true if all of the range items matches the given value' do
+      expect(range_b.my_all?(1)).to eq(true)
+    end
+
+    it 'returns false if any of the range items dont match the given value' do
+      expect(range.my_all?(6)).to eq(false)
+    end
+  end
 end
