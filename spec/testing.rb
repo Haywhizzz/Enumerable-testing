@@ -268,4 +268,36 @@ describe Enumerable do
     end
   end
 
+  describe '#my_map' do
+    it 'returns an Enumerator if no block is given' do
+      expect(array.my_map).to be_a(Enumerator)
+    end
+
+    it 'returns an Enumerator if no block is given' do
+      expect(range.my_map).to be_a(Enumerator)
+    end
+
+    it 'returns a new array after block executed for each item' do
+      new_array = array.my_map(&block)
+      expect(new_array).not_to eq(array)
+    end
+
+    it 'keeps the original array same' do
+      array.my_map(&block)
+      expect(array).to eq(array)
+    end
+
+    it 'returns a new array after block executed for each item' do
+      expect(range.my_map(&block)).to eq(range.map(&block))
+    end
+
+    it 'Iterates through the hash and executes block' do
+      expect(my_hash.my_map(&block)).to eq(my_hash.map(&block))
+    end
+
+    it 'Iterates through the hash and executes block' do
+      expect(my_hash.my_map(&hash_block)).to eq(my_hash.map(&hash_block))
+    end
+  end
+
 end
