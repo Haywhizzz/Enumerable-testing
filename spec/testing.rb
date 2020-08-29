@@ -69,5 +69,17 @@ describe Enumerable do
     end
   end
 
-  
+  describe '#my_select' do
+    it 'it iterates the array and return Enumerator if no block is given' do
+      expect(array.my_select).to be_a(Enumerator)
+    end
+
+    it 'iterates through the array and returns the satisfying items in the array' do
+      expect(array.my_select(&block)).to eql(array.select(&block))
+    end
+
+    it 'Iterates through the range and executes block' do
+      expect(range.my_select(&block)).to eq(range.select(&block))
+    end
+  end
 end
