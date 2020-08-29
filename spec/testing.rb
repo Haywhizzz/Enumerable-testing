@@ -245,4 +245,27 @@ describe Enumerable do
     end
   end
 
+
+  describe '#my_count' do
+    it 'returns the number of items in the array through enumeration' do
+      expect(array.my_count).to eq(array.count)
+    end
+
+    it 'returns the number of items in the range through enumeration' do
+      expect(range.my_count).to eq(range.count)
+    end
+
+    it 'returns the number of items in the range through enumeration' do
+      expect(array.my_count(&block)).to eq(array.count(&block))
+    end
+
+    it 'returns the number of items in the array through enumeration' do
+      expect(array.my_count(3)).to eq(array.count(3))
+    end
+
+    it 'returns the number of items in the range through enumeration' do
+      expect(range.my_count(3)).to eq(range.count(3))
+    end
+  end
+
 end
