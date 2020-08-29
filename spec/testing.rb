@@ -48,3 +48,26 @@ describe Enumerable do
       expect(my_hash.my_each(&hash_block)).to eq(my_hash.each(&hash_block))
     end
   end
+  describe '#my_each_with_index' do
+    it 'returns Enumerator if no block is given' do
+      expect(array.my_each_with_index).to be_a(Enumerator)
+    end
+
+    it 'Iterates through the array and executes block' do
+      counter = 0
+      pr = proc { counter += 1 }
+      array.my_each_with_index { pr.call }
+      expect(counter).to eql(array.size)
+    end
+
+    it 'Iterates through the array and executes block' do
+      expect(array.my_each_with_index(&block)).to eq(array.each_with_index(&block))
+    end
+
+    it 'Iterates through the array and executes block' do
+      expect(array.my_each_with_index(&block_with_index)).to eq(array.each_with_index(&block_with_index))
+    end
+  end
+
+  
+end
