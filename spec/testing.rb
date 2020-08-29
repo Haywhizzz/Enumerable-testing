@@ -245,7 +245,6 @@ describe Enumerable do
     end
   end
 
-
   describe '#my_count' do
     it 'returns the number of items in the array through enumeration' do
       expect(array.my_count).to eq(array.count)
@@ -300,7 +299,6 @@ describe Enumerable do
     end
   end
 
-
   describe '#my_inject' do
     it 'combine all elements of enum by applying a binary operation, specified by a block' do
       expect(array.my_inject(&inject_block)).to eq(array.inject(&inject_block))
@@ -323,7 +321,7 @@ describe Enumerable do
     end
 
     it 'combines each element of the collection by applying the symbol' do
-      expect(array.my_inject(3, :)).to eq(array.inject(3, :))
+      expect(array.my_inject(3, :*)).to eq(array.inject(3, :*))
     end
 
     it 'combines each element by applying the symbol' do
@@ -331,6 +329,7 @@ describe Enumerable do
     end
 
     it 'combines each element of the collection by applying the symbol and inject the value given' do
-      expect(range.my_inject(3, :)).to eq(range.inject(3, :))
+      expect(range.my_inject(3, :*)).to eq(range.inject(3, :*))
     end
+  end
 end
