@@ -20,3 +20,31 @@ describe Enumerable do
   let(:hash_block) { proc { |key, value| puts "#{key} is #{value}" } }
   let(:expression) { '/d/' }
   let(:new_array) { [] }
+
+  describe '#my_each' do
+    it 'return Enumerator if no block is given' do
+      expect(array.my_each).to be_a(Enumerator)
+    end
+
+    it 'Iterates through the array and executes block' do
+      counter = 0
+      pr = proc { counter += 1 }
+      array.my_each { pr.call }
+      expect(counter).to eql(array.size)
+    end
+
+    it 'Iterates through the range and executes block' do
+      counter = 0
+      pr = proc { counter += 1 }
+      range.my_each { pr.call }
+      expect(counter).to eq(range.size)
+    end
+
+    it 'Iterates through the hash and executes block' do
+      expect(my_hash.my_each(&block)).to eq(my_hash.each(&block))
+    end
+
+    it 'Iterates through the hash and executes block' do
+      expect(my_hash.my_each(&hash_block)).to eq(my_hash.each(&hash_block))
+    end
+  end
